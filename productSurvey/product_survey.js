@@ -1,4 +1,6 @@
 const submitButton = document.getElementById('submitBtn');
+const submitComments  = document.getElementById('submitComments');
+
 
 function submitFeedback() {
     const username = document.getElementById('name').value;
@@ -16,6 +18,7 @@ function submitFeedback() {
     document.getElementById('userProductChoice').innerHTML = productType;
     document.getElementById('userFeedback').innerHTML = feedback;
     document.getElementById('userInfo').style.display = 'block';
+    document.getElementById('userExp').style.display = 'block';
     console.log(submitButton, username, age, email, job, designation, productType, feedback);
     alert('Thank you for your valuable feedback')
 }
@@ -27,3 +30,12 @@ document.addEventListener('keydown', function (event) {
         submitFeedback();
     }
 });
+
+
+function submitCts(){
+    const comments = document.getElementById('userExperience').value;
+    console.log(comments);
+    alert("votre message a bien ete pris en compte. Merci d'avoir laissé votre avis")
+}
+
+submitComments.onclick = submitCts;
