@@ -16,3 +16,9 @@ function checkCountValue() {
     alert("Votre publication Instagram a gagné 20 abonnés ! Continuez comme ça !");
   }
 }
+
+function reinitializCount(){
+    count = 0;
+    displayCount();
+    alert("Le compteur à été reinitialisé");
+}
