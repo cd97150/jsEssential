@@ -1,10 +1,10 @@
 function showweatherDetails(event) {
     event.preventDefault();
-    const city = document.getElementById('city').value;
+    const lat = document.getElementById('lat').value;
+    const lon = document.getElementById('lon').value;
     const apiKey = 'd5054ccf551d12ccd3b5fb24bf4eff43'; // Remplacez 'YOUR_API_KEY' par votre clé API réelle
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    
-    const urlLaLon = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+   
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -18,9 +18,6 @@ function showweatherDetails(event) {
             const weatherInfo = document.getElementById('weatherInfo');
             weatherInfo.innerHTML = `<p>Échec de la récupération de la météo. Veuillez réessayer.</p>`;
         });
-}
-
-
-
+ }
 
 document.getElementById('weatherForm').addEventListener('submit', showweatherDetails);
